@@ -2,6 +2,6 @@ User-Agent: *
 Allow: /
 Disallow: /favicon.ico
 
-Sitemap: https://parking-for-all.vercel.app/sitemap.xml
+Sitemap: https://parking-for-all.zucca100.com/sitemap.xml
 
-#DaumWebMasterTool:eb86d8060bc96d87b3581376ef93172b22c3648728ab2f4f72c22474edd1a9c7:7FHGSqvkpp5m21kM8rOvAQ==
+#DaumWebMasterTool:722c830b317381009471b0f4e8c746e826d7b26d89834410bd21a33e86304652:7FHGSqvkpp5m21kM8rOvAQ==
