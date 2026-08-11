@@ -40,5 +40,7 @@ parking-lot/
 - Google/네이버/다음 서치어드바이저 소유 확인 코드 — 이 도메인 기준으로 새로
   발급받아서 `src/app/layout.tsx`의 `metadata.verification`에 채울 것
   (dongne-info 코드 재사용 불가 — 도메인별로 다름)
-- 실제 배포 도메인이 `parking-lot.vercel.app`이 아니게 되면 `src/lib/site.ts`,
-  `src/app/sitemap.ts`, `src/app/robots.txt`의 URL 전부 교체
+- 배포 도메인은 `juchajang-info.vercel.app` (레포/프로젝트명 `parking-lot`은
+  이미 다른 사용자가 선점하고 있어서 vercel.app 서브도메인만 다르게 잡음).
+  나중에 도메인을 또 바꾸면 `src/lib/site.ts`, `src/app/robots.txt`의 URL도
+  같이 바꿀 것 (`src/app/sitemap.ts`는 site.ts를 import하므로 자동 반영됨)
