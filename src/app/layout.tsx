@@ -46,10 +46,12 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
   },
-  // TODO: 이 도메인으로 구글/네이버/다음 서치어드바이저에 소유 확인 받은 뒤
-  // 발급되는 코드로 verification 필드를 채울 것 (dongne-info와는 다른 도메인이라
-  // 새로 받아야 함). 빈 문자열을 넣으면 빈 meta 태그가 그대로 나가버리니
-  // 코드 받기 전까지는 필드 자체를 비워둔다.
+  verification: {
+    google: "af42lhPhv8s-htTu4oTIBne9w1WaCT-QEl3jOqucBnU",
+    other: {
+      "naver-site-verification": "6a808362510aed923a32d1b1f9039ce14084e3b4",
+    },
+  },
 };
 
 const jsonLd = {
