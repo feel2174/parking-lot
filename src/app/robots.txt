@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /favicon.ico
+
+Sitemap: https://parking-lot.vercel.app/sitemap.xml
