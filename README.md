@@ -40,7 +40,11 @@ parking-lot/
 - Google/네이버/다음 서치어드바이저 소유 확인 코드 — 이 도메인 기준으로 새로
   발급받아서 `src/app/layout.tsx`의 `metadata.verification`에 채울 것
   (dongne-info 코드 재사용 불가 — 도메인별로 다름)
-- 배포 도메인은 `juchajang-info.vercel.app` (레포/프로젝트명 `parking-lot`은
+- 배포 도메인은 `parking-for-all.vercel.app` (레포/프로젝트명 `parking-lot`은
   이미 다른 사용자가 선점하고 있어서 vercel.app 서브도메인만 다르게 잡음).
   나중에 도메인을 또 바꾸면 `src/lib/site.ts`, `src/app/robots.txt`의 URL도
   같이 바꿀 것 (`src/app/sitemap.ts`는 site.ts를 import하므로 자동 반영됨)
+- 이 프로젝트는 Vercel의 기본 SSO 배포 보호가 켜져 있어서, 프로젝트 이름과
+  정확히 일치하지 않는 `*.vercel.app` 별칭(=지금 쓰는 도메인 포함)은 기본적으로
+  로그인 없이 접근이 막혀 있었음 — `vercel project protection disable
+  parking-lot --sso`로 꺼서 공개 접근 가능하게 함

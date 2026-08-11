@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /favicon.ico
 
-Sitemap: https://juchajang-info.vercel.app/sitemap.xml
+Sitemap: https://parking-for-all.vercel.app/sitemap.xml
