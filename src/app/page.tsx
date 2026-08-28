@@ -1,5 +1,6 @@
 import { getAllRegionSummaries } from "@/lib/regions";
 import KoreaMap from "@/components/KoreaMap";
+import RegionLinksIndex from "@/components/RegionLinksIndex";
 
 export default function Home() {
   const regions = getAllRegionSummaries();
@@ -21,6 +22,8 @@ export default function Home() {
           <KoreaMap regions={regions} />
         </div>
       </div>
+
+      <RegionLinksIndex regions={regions} />
     </main>
   );
 }
