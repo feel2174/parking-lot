@@ -1,4 +1,5 @@
 import type { RegionStats } from "@/lib/regionStats";
+import AdSlot from "@/components/AdSlot";
 
 // 원본 공공데이터에는 없는 편집적 부가가치(문서 1-3 원칙): 지역별로 계산된 요약
 // 문장 + 이용 안내/FAQ. 서버 컴포넌트라 최초 HTML에 고유 텍스트로 들어가고,
@@ -65,6 +66,7 @@ export function RegionSummary({
       <h2 className="text-xl font-bold text-blue-dark">
         {label} 주차 현황 한눈에 보기
       </h2>
+      <AdSlot slot="1687931549" />
       <p className="mt-3 leading-relaxed text-slate-700">{sentences.join(" ")}</p>
     </section>
   );

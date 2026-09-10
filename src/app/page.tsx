@@ -1,6 +1,7 @@
 import { getAllRegionSummaries } from "@/lib/regions";
 import KoreaMap from "@/components/KoreaMap";
 import RegionLinksIndex from "@/components/RegionLinksIndex";
+import AdSlot from "@/components/AdSlot";
 
 export default function Home() {
   const regions = getAllRegionSummaries();
@@ -18,6 +19,7 @@ export default function Home() {
         <h2 className="text-center text-2xl font-bold text-blue-dark">
           지역을 눌러보세요
         </h2>
+        <AdSlot slot="1687931549" />
         <div className="mt-4">
           <KoreaMap regions={regions} />
         </div>

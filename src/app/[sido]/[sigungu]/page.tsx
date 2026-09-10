@@ -13,6 +13,7 @@ import ListFilter from "@/components/ListFilter";
 import OperatingDayBadges from "@/components/OperatingDayBadges";
 import { RegionSummary, RegionGuide } from "@/components/RegionEditorial";
 import RelatedRegions from "@/components/RelatedRegions";
+import AdSlot from "@/components/AdSlot";
 
 export async function generateStaticParams() {
   return getAllRegionSummaries().map((r) => ({
@@ -182,6 +183,7 @@ export default async function RegionPage({
         <h2 className="text-2xl font-bold text-blue-dark">
           거주자우선주차구역 ({residentParking.length})
         </h2>
+        <AdSlot slot="1687931549" />
         {hasResident ? (
           <div className="mt-4">
             <p className="mb-3 rounded-xl bg-yellow/20 px-4 py-3 text-sm text-yellow-dark">
