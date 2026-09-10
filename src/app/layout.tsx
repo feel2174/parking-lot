@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { siteGraph } from "@/lib/jsonld";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -54,15 +56,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE_NAME,
-  url: SITE_URL,
-  description: DESCRIPTION,
-  inLanguage: "ko-KR",
-};
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -70,10 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteGraph()} />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196149361612087"

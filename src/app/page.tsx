@@ -2,12 +2,15 @@ import { getAllRegionSummaries } from "@/lib/regions";
 import KoreaMap from "@/components/KoreaMap";
 import RegionLinksIndex from "@/components/RegionLinksIndex";
 import AdSlot from "@/components/AdSlot";
+import JsonLd from "@/components/JsonLd";
+import { homeGraph } from "@/lib/jsonld";
 
 export default function Home() {
   const regions = getAllRegionSummaries();
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
+      <JsonLd data={homeGraph(regions)} />
       <div className="rounded-2xl bg-blue px-6 py-8 text-center text-white">
         <h1 className="text-3xl font-extrabold sm:text-4xl">우리동네 주차장 정보</h1>
         <p className="mt-3 text-lg text-blue-light sm:text-xl">

@@ -14,6 +14,8 @@ import OperatingDayBadges from "@/components/OperatingDayBadges";
 import { RegionSummary, RegionGuide } from "@/components/RegionEditorial";
 import RelatedRegions from "@/components/RelatedRegions";
 import AdSlot from "@/components/AdSlot";
+import JsonLd from "@/components/JsonLd";
+import { regionGraph } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return getAllRegionSummaries().map((r) => ({
@@ -113,6 +115,15 @@ export default async function RegionPage({
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
+      <JsonLd
+        data={regionGraph({
+          sido,
+          sigungu,
+          alias,
+          parking,
+          residentParking,
+        })}
+      />
       <nav className="mb-4 text-base font-medium text-slate-500">
         <Link href="/" className="text-blue-dark hover:underline">
           우리동네 주차장 정보
