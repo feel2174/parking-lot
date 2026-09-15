@@ -13,6 +13,7 @@ import ListFilter from "@/components/ListFilter";
 import OperatingDayBadges from "@/components/OperatingDayBadges";
 import { RegionSummary, RegionGuide } from "@/components/RegionEditorial";
 import RelatedRegions from "@/components/RelatedRegions";
+import SiblingSites from "@/components/SiblingSites";
 import AdSlot from "@/components/AdSlot";
 import JsonLd from "@/components/JsonLd";
 import { regionGraph } from "@/lib/jsonld";
@@ -272,6 +273,8 @@ export default async function RegionPage({
       </section>
 
       <RegionGuide sigungu={sigungu} hasResident={hasResident} />
+
+      <SiblingSites sido={sido} sigungu={sigungu} />
 
       <RelatedRegions
         regions={allRegions}
