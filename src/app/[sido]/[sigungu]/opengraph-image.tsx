@@ -1,6 +1,12 @@
 import { ImageResponse } from "next/og";
+export const dynamic = "force-static";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { getAllRegionSummaries } from "@/lib/regions";
+
+export function generateStaticParams() {
+  return getAllRegionSummaries().map(({ sido, sigungu }) => ({ sido, sigungu }));
+}
 
 // 2x resolution (120:63 ratio) — vector-sourced, stays crisp when scaled up.
 export const size = { width: 2400, height: 1260 };

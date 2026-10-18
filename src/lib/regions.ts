@@ -98,8 +98,11 @@ function readRegionFile(file: string): RegionFile {
   return JSON.parse(raw);
 }
 
+let cachedSummaries: RegionSummary[] | null = null;
+
 export function getAllRegionSummaries(): RegionSummary[] {
-  return listRegionFiles()
+  if (cachedSummaries) return cachedSummaries;
+  cachedSummaries = listRegionFiles()
     .map((file) => {
       const stem = file.replace(/\.json$/, "");
       const { sido, sigungu } = parseKey(stem);
@@ -112,6 +115,7 @@ export function getAllRegionSummaries(): RegionSummary[] {
       };
     })
     .filter((r) => r.parkingCount > 0 || r.residentParkingCount > 0);
+  return cachedSummaries;
 }
 
 export function getRegionData(
